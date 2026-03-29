@@ -21,7 +21,9 @@ registerForm.addEventListener("submit", function (event) {
     showError("fullname", "Name is required");
   }
   //Email Validation
-  if (/^\w+@\w+\.\w{2,3}$/.test(emailElement.value) === false) {
+  if (emailElement.value == "") {
+    showError("email", "Email is required");
+  } else if (/^\w+@\w+\.\w{2,3}$/.test(emailElement.value) === false) {
     showError("email", "Email must be in valid format");
   }
   //Password Validation
